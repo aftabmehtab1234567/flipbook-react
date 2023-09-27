@@ -1,4 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# flipbook-react
+=======
+<<<<<<< HEAD
+>>>>>>> 9070f1e (hi)
 # pdf-to--flipbook
 =======
 <<<<<<< HEAD
@@ -76,3 +82,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 >>>>>>> fb7ea3e (flipbook)
 >>>>>>> 52e4b2c (hello)
+<<<<<<< HEAD
+=======
+>>>>>>> 43b1af1 (hi)
+>>>>>>> 9070f1e (hi)
