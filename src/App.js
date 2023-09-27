@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import PDFToImages from './component/PdfToImages';
+
 import FlipBook from './component/FlipBook';
+import PdfToImages from './component/PdfToImages'; // Import the PDFToImages component
 import pdf from './images/intro.pdf'; // Import your PDF file here
 
 function App() {
@@ -20,12 +21,11 @@ function App() {
       });
   }, []); // Empty dependency array ensures this effect runs only once
 
-  console.log(imageArray);
   return (
     <div className="App">
       <h1>PDF Flipbook Viewer</h1>
-      <PDFToImages pdfFile={pdf} imageArray={setImageArray} /> {/* Pass imageArray as a prop */}
-      <FlipBook imageArray={imageArray} />
+      <PdfToImages  /> {/* Pass pdf as a prop */}
+      <FlipBook pdfFile={pdf} imageArray={imageArray} />
     </div>
   );
 }

@@ -13,16 +13,17 @@ function FlipBook({ imageArray }) {
   }, []);
 
   if (!Array.isArray(imageArray) || imageArray.length === 0) {
-    console.log(imageArray);
+   
     return <div>No images to display.</div>;
   }
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
-
+  
   return (
-    <div className="flipbook-container">
+    
+    <div className="flipbook-container bg-secondary">
       <Flipbook
         ref={flipPageRef}
         width={565} // Adjust the width as needed

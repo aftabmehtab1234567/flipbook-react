@@ -4,11 +4,12 @@ import * as htmlToImage from 'html-to-image';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import FlipBook from './FlipBook';
+
+import pdfPath from '../images/intro.pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function PDFToImages({ pdfFile }) {
   const [numPages, setNumPages] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
   const [imageArray, setImageArray] = useState([]);
 
   const onDocumentLoadSuccess = ({ numPages }) => {
@@ -28,7 +29,6 @@ function PDFToImages({ pdfFile }) {
         } catch (error) {
           console.error(`Error converting page ${page} to image:`, error);
         }
-        
       } else {
         console.error(`Page ${page} not found.`);
       }
@@ -42,7 +42,6 @@ function PDFToImages({ pdfFile }) {
     }
   }, [numPages]);
 
-  // Pass the imageArray to the FlipBook component as a prop
   return (
     <div>
       <Document file={pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
@@ -52,7 +51,6 @@ function PDFToImages({ pdfFile }) {
       </Document>
      
       <FlipBook imageArray={imageArray} />
-     
     </div>
   );
 }
