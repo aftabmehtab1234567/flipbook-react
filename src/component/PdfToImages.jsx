@@ -18,7 +18,7 @@ function PDFToImages({ pdfFile }) {
 
   const handleImageConversion = async (numPages) => {
     const images = [];
-    for (let page = 1; page <= numPages; page++) {
+    for (let page = 0; page <= numPages; page++) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       const pdfPage = document.querySelector(`.react-pdf__Page[data-page-number="${page}"]`);
 

@@ -36,6 +36,7 @@ function FlipBook({ imageArray }) {
             <img src={imageDataUrl} alt={`Page ${index + 1}`} />
           </div>
         ))}
+        
       </Flipbook>
 
       

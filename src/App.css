@@ -40,6 +40,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Set the height to occupy the full viewport height */
+  height: 100%; /* Set the height to occupy the full viewport height */
   background-color:grey;
 }
