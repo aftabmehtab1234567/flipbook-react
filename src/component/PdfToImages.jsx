@@ -5,7 +5,6 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import FlipBook from './FlipBook';
 
-import pdfPath from '../images/intro.pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function PDFToImages({ pdfFile }) {
@@ -26,6 +25,9 @@ function PDFToImages({ pdfFile }) {
         try {
           const img = await htmlToImage.toPng(pdfPage);
           images.push(img);
+
+          // Add a CSS class to hide the PDF pages
+          pdfPage.classList.add("hidden-pdf-page");
         } catch (error) {
           console.error(`Error converting page ${page} to image:`, error);
         }
@@ -33,6 +35,7 @@ function PDFToImages({ pdfFile }) {
         console.error(`Page ${page} not found.`);
       }
     }
+
     setImageArray(images);
   };
 
@@ -44,6 +47,14 @@ function PDFToImages({ pdfFile }) {
 
   return (
     <div>
+      <style>
+        {`
+          /* CSS to hide the PDF pages */
+          .hidden-pdf-page {
+            display: none;
+          }
+        `}
+      </style>
       <Document file={pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
         {Array.from({ length: numPages }).map((_, index) => (
           <Page key={index} pageNumber={index + 1} />
