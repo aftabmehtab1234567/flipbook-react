@@ -36,11 +36,16 @@
     transform: rotate(360deg);
   }
 }
-.flipbook-container {
+  .background-container {
+   background-color: grey; 
+   justify-content: center;
+  align-items: center; 
+} 
+
+.centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; /* Set the height to occupy the full viewport height */
-  background-color:grey;
-}
+} 
+
 
