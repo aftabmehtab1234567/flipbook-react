@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Flipbook from "react-pageflip";
 
-function FlipBook({ imageArray }) {
-  console.log(imageArray); // Add this line to debug
+function FlipBook({  imageArray }) {
+ console.log(imageArray);
 
   const [currentPage, setCurrentPage] = useState(0);
   const flipPageRef = useRef(null);

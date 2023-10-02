@@ -17,9 +17,9 @@ function PDFToImages({ pdfFile }) {
 
   const handleImageConversion = async (numPages) => {
     const images = [];
-    for (let page = 0; page <= numPages; page++) {
+    for (let page = 0; page < numPages; page++) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      const pdfPage = document.querySelector(`.react-pdf__Page[data-page-number="${page}"]`);
+      const pdfPage = document.querySelector(`.react-pdf__Page[data-page-number="${page + 1}"]`);
 
       if (pdfPage) {
         try {
@@ -29,10 +29,12 @@ function PDFToImages({ pdfFile }) {
           // Add a CSS class to hide the PDF pages
           pdfPage.classList.add("hidden-pdf-page");
         } catch (error) {
-          console.error(`Error converting page ${page} to image:`, error);
+          console.error(`Error converting page ${page + 1} to image:`, error);
+          // Handle the error here or skip this page and continue processing
         }
       } else {
-        console.error(`Page ${page} not found.`);
+        console.error(`Page ${page + 1} not found.`);
+        // Handle the missing page here or skip this page and continue processing
       }
     }
 

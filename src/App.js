@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <h1>PDF Flipbook Viewer</h1>
-      <PdfToImages pdfFile={pdf}  /> {/* Pass pdf as a prop */}
+      <PdfToImages pdfFile={pdf}  /> 
       <FlipBook  imageArray={imageArray}  />
     </div>
   );
