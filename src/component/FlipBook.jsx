@@ -26,7 +26,7 @@ function FlipBook({  imageArray }) {
     <div className="flipbook-container bg-secondary">
       <Flipbook
         ref={flipPageRef}
-        width={565} // Adjust the width as needed
+        width={665} // Adjust the width as needed
         height={830} // Adjust the height as needed
         currentPage={currentPage}
         onFlip={handlePageChange}
